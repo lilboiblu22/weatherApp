@@ -1,6 +1,7 @@
 package edu.iu.habahram.weathermonitoring.controllers;
 
 import edu.iu.habahram.weathermonitoring.model.Observer;
+import edu.iu.habahram.weathermonitoring.model.StatisticsDisplay;
 import edu.iu.habahram.weathermonitoring.model.Subject;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -12,9 +13,14 @@ public class HomeController {
 
     private Subject weatherData;
 
-    public HomeController(Subject weatherData) {
+    private StatisticsDisplay statisticsDisplay;
+
+
+    public HomeController(Subject weatherData, StatisticsDisplay statisticsDisplay) {
         this.weatherData = weatherData;
+        this.statisticsDisplay = statisticsDisplay;
     }
+
 
     @GetMapping
     public ResponseEntity index() {

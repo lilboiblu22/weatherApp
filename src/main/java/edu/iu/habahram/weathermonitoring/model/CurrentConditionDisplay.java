@@ -33,6 +33,7 @@ public class CurrentConditionDisplay
         return html;
     }
 
+
     @Override
     public String name() {
         return "Current Condition Display";

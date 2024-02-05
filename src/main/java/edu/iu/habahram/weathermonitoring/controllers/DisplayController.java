@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.*;
 public class DisplayController {
     private CurrentConditionDisplay currentConditionDisplay;
 
+    private StatisticsDisplay statisticsDisplay;
+
     public DisplayController(CurrentConditionDisplay currentConditionDisplay
                              ) {
         this.currentConditionDisplay = currentConditionDisplay;
@@ -25,6 +27,10 @@ public class DisplayController {
         html += "<ul>";
         html += "<li>";
         html += String.format("<a href=/displays/%s>%s</a>", currentConditionDisplay.id(), currentConditionDisplay.name());
+        html += "</li>";
+
+        html += "<li>";
+        html += String.format("<a href=/displays/%s>%s</a>", statisticsDisplay.id(), statisticsDisplay.name());
         html += "</li>";
 
         html += "</ul>";
